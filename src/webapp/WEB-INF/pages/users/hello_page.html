@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello! This is Hello page of CRUD App!!!</title>
+</head>
+<body>
+Hello page!
+<a href="create">create</a> or <a href="delete">delete</a> or
+<a href="read">read</a> or <a href="update">update</a> or <a href="users">home</a>
+<table>
+    <tr>
+        <th>id</th>
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>age</th>
+        <th>email</th>
+        <th>action</th>
+    </tr>
+    <tr th:each="user : ${listOfUsers}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.email}"></td>
+        <td>
+            <a href="update/${user.id}">edit</a>
+            <a href="delete/${user.id}">delete</a>
+        </td>
+
+    </tr>
+</table>
+
+</body>
+
